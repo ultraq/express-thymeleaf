@@ -40,7 +40,7 @@ app.set('view engine', 'html');
 
 // Render views as you would normally in response to requests
 app.get('/', function(request, response) {
-	response.render('index');
+  response.render('index');
 });
 
 app.listen(3000);
