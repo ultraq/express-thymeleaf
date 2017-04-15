@@ -19,7 +19,7 @@
  * Bridges the Promise value of Thymeleaf's `process*` functions and Express'
  * callback for rendering.
  * 
- * @param {Thymeleaf} thymeleaf
+ * @param {Object} thymeleaf
  *   The Thymeleaf module to use for rendering templates.
  * @return {Function}
  *   An Express-compatible template engine function that uses Thymeleaf for

@@ -2,6 +2,10 @@
 Express Thymeleaf
 =================
 
+[![Build Status](https://travis-ci.org/ultraq/express-thymeleaf.svg?branch=master)](https://travis-ci.org/ultraq/express-thymeleaf)
+[![GitHub tag](https://img.shields.io/github/tag/ultraq/express-thymeleaf.svg?maxAge=3600)](https://github.com/ultraq/express-thymeleaf/tags)
+[![License](https://img.shields.io/github/license/ultraq/express-thymeleaf.svg?maxAge=2592000)](https://github.com/ultraq/express-thymeleaf/blob/master/LICENSE.txt)
+
 Integrate [ThymeleafJS](https://github.com/ultraq/thymeleaf-js) with
 [Express](http://expressjs.com/).
 
