@@ -1,0 +1,30 @@
+{
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "script"
+	},
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"rules": {
+		"brace-style": ["error", "stroustrup"],
+		"comma-dangle": "error",
+		"no-console": "off",
+		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+		"no-unused-vars": ["error", { "args": "none" }],
+		"quotes": ["error", "single", "avoid-escape"],
+		"semi": "error",
+		"space-before-function-paren": ["error", "never"],
+		"strict": "error",
+		"valid-jsdoc": ["error", {
+			"requireParamDescription": false,
+			"requireReturn": false,
+			"requireReturnDescription": false,
+			"prefer": {
+				"return": "return"
+			}
+		}]
+	}
+}
