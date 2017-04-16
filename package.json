@@ -10,7 +10,7 @@
 	},
 	"main": ".express-thymeleaf.js",
 	"scripts": {
-		"lint": "eslint **/*.js",
+		"lint": "eslint '**/*.js'",
 		"test": "npm run lint && mocha"
 	},
 	"peerDependencies": {
