@@ -1,6 +1,6 @@
 {
 	"name": "express-thymeleaf",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Integrate ThymeleafJS with Express",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -8,7 +8,7 @@
 		"type": "git",
 		"url": "https://github.com/ultraq/express-thymeleaf"
 	},
-	"main": ".express-thymeleaf.js",
+	"main": "./express-thymeleaf.js",
 	"scripts": {
 		"lint": "eslint '**/*.js'",
 		"test": "npm run lint && mocha"
