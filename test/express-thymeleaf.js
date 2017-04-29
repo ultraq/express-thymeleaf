@@ -16,8 +16,9 @@
 /* eslint-env mocha */
 'use strict';
 
-const {assert} = require('chai');
-const Promise  = require('bluebird');
+const {assert}         = require('chai');
+const sinon            = require('sinon');
+const {TemplateEngine} = require('thymeleaf');
 
 const expressThymeleaf = require('../express-thymeleaf');
 
@@ -26,12 +27,22 @@ const expressThymeleaf = require('../express-thymeleaf');
  */
 describe('express-thymeleaf', function() {
 
+	let templateEngine;
+	let processFileStub;
+
+	beforeEach(function() {
+		templateEngine = new TemplateEngine();
+		processFileStub = sinon.stub(templateEngine, 'processFile');
+	});
+
+	afterEach(function() {
+		processFileStub.restore();
+	});
+
+
 	it('Express template engine function for success', function(done) {
-		let bridge = expressThymeleaf({
-			processFile: function() {
-				return Promise.resolve('success');
-			}
-		});
+		let bridge = expressThymeleaf(templateEngine);
+		processFileStub.resolves('success');
 		bridge('template.html', {}, function(error, result) {
 			assert.isNull(error);
 			assert.strictEqual(result, 'success');
@@ -40,13 +51,11 @@ describe('express-thymeleaf', function() {
 	});
 
 	it('Express template engine function for errors', function(done) {
-		let bridge = expressThymeleaf({
-			processFile: function() {
-				return Promise.reject('error');
-			}
-		});
+		let bridge = expressThymeleaf(templateEngine);
+		processFileStub.rejects(new Error('error'));
 		bridge('template.html', {}, function(error, result) {
-			assert.strictEqual(error, 'error');
+			assert.instanceOf(error, Error);
+			assert.strictEqual(error.message, 'error');
 			assert.isUndefined(result);
 			done();
 		});

@@ -19,16 +19,16 @@
  * Bridges the Promise value of Thymeleaf's `process*` functions and Express'
  * callback for rendering.
  * 
- * @param {Object} thymeleaf
- *   The Thymeleaf module to use for rendering templates.
+ * @param {Object} templateEngine
+ *   The Thymeleaf template engine to use for rendering templates.
  * @return {Function}
  *   An Express-compatible template engine function that uses Thymeleaf for
  *   template rendering, executing the callback with the appropriate values for
  *   the rendering response.
  */
-module.exports = function(thymeleaf) {
+module.exports = function(templateEngine) {
 	return function(filePath, options, callback) {
-		thymeleaf.processFile(filePath, options)
+		templateEngine.processFile(filePath, options)
 			.then(template => {
 				callback(null, template);
 			})

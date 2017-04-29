@@ -31,11 +31,12 @@ Usage
 ```javascript
 import express          from 'express';
 import expressThymeleaf from 'express-thymeleaf';
-import thymeleaf        from 'thymeleaf';
+import {TemplateEngine} from 'thymeleaf';
 
 // Configure your application to use Thymeleaf via the express-thymeleaf module
 let app = express();
-app.engine('html', expressThymeleaf(thymeleaf));
+let templateEngine = new TemplateEngine();
+app.engine('html', expressThymeleaf(templateEngine));
 app.set('view engine', 'html');
 
 // Render views as you would normally in response to requests
