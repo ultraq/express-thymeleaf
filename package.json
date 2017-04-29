@@ -1,6 +1,6 @@
 {
 	"name": "express-thymeleaf",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Integrate ThymeleafJS with Express",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -14,13 +14,14 @@
 		"test": "npm run lint && mocha"
 	},
 	"peerDependencies": {
-		"thymeleaf": "0.x"
+		"thymeleaf": "<=0.4.0"
 	},
 	"devDependencies": {
 		"bluebird": "^3.5.0",
 		"chai": "^3.5.0",
 		"eslint": "^3.19.0",
-		"mocha": "^3.2.0"
+		"mocha": "^3.2.0",
+		"thymeleaf": "<=0.4.0"
 	},
 	"engines": {
 		"node": ">=6.5.0"
