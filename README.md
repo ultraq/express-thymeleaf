@@ -4,7 +4,7 @@ Express Thymeleaf
 
 [![Build Status](https://travis-ci.org/ultraq/express-thymeleaf.svg?branch=master)](https://travis-ci.org/ultraq/express-thymeleaf)
 [![Coverage Status](https://coveralls.io/repos/github/ultraq/express-thymeleaf/badge.svg?branch=master)](https://coveralls.io/github/ultraq/express-thymeleaf?branch=master)
-[![GitHub tag](https://img.shields.io/github/tag/ultraq/express-thymeleaf.svg?maxAge=3600)](https://github.com/ultraq/express-thymeleaf/tags)
+[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=3600)](https://www.npmjs.com/package/express-thymeleaf)
 [![License](https://img.shields.io/github/license/ultraq/express-thymeleaf.svg?maxAge=2592000)](https://github.com/ultraq/express-thymeleaf/blob/master/LICENSE.txt)
 
 Integrate [ThymeleafJS](https://github.com/ultraq/thymeleaf-js) with
