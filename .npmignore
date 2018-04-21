@@ -1,2 +1,4 @@
-/test
+/coverage
+*.iml
 .*
+jest.config.js

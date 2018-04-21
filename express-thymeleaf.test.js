@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* eslint-env mocha */
+/* eslint-env jest */
 'use strict';
 
-const {assert}         = require('chai');
-const sinon            = require('sinon');
-const {TemplateEngine} = require('thymeleaf');
+const expressThymeleaf = require('./express-thymeleaf');
 
-const expressThymeleaf = require('../express-thymeleaf');
+const {TemplateEngine} = require('thymeleaf');
 
 /**
  * Tests for the express-thymeleaf bridge module.
@@ -28,35 +26,31 @@ const expressThymeleaf = require('../express-thymeleaf');
 describe('express-thymeleaf', function() {
 
 	let templateEngine;
-	let processFileStub;
-
 	beforeEach(function() {
 		templateEngine = new TemplateEngine();
-		processFileStub = sinon.stub(templateEngine, 'processFile');
 	});
 
-	afterEach(function() {
-		processFileStub.restore();
-	});
-
-
-	it('Express template engine function for success', function(done) {
+	test('Express template engine function for success', function(done) {
+		jest.spyOn(templateEngine, 'processFile').mockImplementation(() => {
+			return Promise.resolve('success');
+		});
 		let bridge = expressThymeleaf(templateEngine);
-		processFileStub.resolves('success');
 		bridge('template.html', {}, function(error, result) {
-			assert.isNull(error);
-			assert.strictEqual(result, 'success');
+			expect(error).toBe(null);
+			expect(result).toBe('success');
 			done();
 		});
 	});
 
-	it('Express template engine function for errors', function(done) {
+	test('Express template engine function for errors', function(done) {
+		jest.spyOn(templateEngine, 'processFile').mockImplementation(() => {
+			return Promise.reject(new Error('error'));
+		});
 		let bridge = expressThymeleaf(templateEngine);
-		processFileStub.rejects(new Error('error'));
 		bridge('template.html', {}, function(error, result) {
-			assert.instanceOf(error, Error);
-			assert.strictEqual(error.message, 'error');
-			assert.isUndefined(result);
+			expect(error).toBeInstanceOf(Error);
+			expect(error.message).toBe('error');
+			expect(result).toBe(undefined);
 			done();
 		});
 	});
