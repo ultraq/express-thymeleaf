@@ -6,7 +6,7 @@ Express Thymeleaf
 [![Coverage Status](https://coveralls.io/repos/github/ultraq/express-thymeleaf/badge.svg?branch=master)](https://coveralls.io/github/ultraq/express-thymeleaf?branch=master)
 [![npm](https://img.shields.io/npm/v/npm.svg?maxAge=3600)](https://www.npmjs.com/package/express-thymeleaf)
 
-Integrate [ThymeleafJS](https://github.com/ultraq/thymeleaf-js) with
+Integrate [ThymeleafJS](https://github.com/ultraq/thymeleafjs) with
 [Express](http://expressjs.com/).
 
 ThymeleafJS returns Promises of processed templates, but Express uses a callback
@@ -26,7 +26,7 @@ Usage
 -----
 
 > This module is still under development, denoted by the 0.x semver, in
-> conjunction with the thymeleaf-js project, so expect anything below to change.
+> conjunction with the ThymeleafJS project, so expect anything below to change.
 
 ```javascript
 import express          from 'express';
